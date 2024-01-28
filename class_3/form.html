@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+  <body>
+    <form action="">
+      <h1>Registration form</h1>
+      <fieldset>
+        <legend>User Information</legend>
+        <label for="fname">First name </label>
+        <input
+          name="fname"
+          id="fname"
+          placeholder="Enter you first name"
+          type="text"
+        />
+
+        <label for="lname">Last name </label>
+        <input
+          name="lname"
+          id="lname"
+          placeholder="Enter your last name"
+          type="text"
+        />
+
+        <p><strong>Note:</strong>The default maximum character length is 20</p>
+
+        <label for="age">Enter your age: </label>
+        <input type="number" name="age" min="18" max="50" />
+
+        <label for="email">Email-address</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="xyz@gmail.com"
+        />
+
+        <p><strong>Note:</strong>The default maximum character length is 20</p>
+
+        <label for="multiple-email">Enter multiple Email-address</label>
+        <input
+          type="email"
+          name="email"
+          id="multiple-email"
+          placeholder="xyz@gmail.com"
+          multiple
+        />
+
+        <label for="file">Select file to upload</label>
+        <input type="file" name="file" />
+
+        <label for="url">Enter your website URL: </label>
+        <input type="url" name="url" placeholder="http://example.com" />
+
+        <label for="dob">Enter your birth Month-year </label>
+        <input type="month" name="dob" />
+
+        <label for="tel"><strong> Enter your Telephone Number</strong></label>
+        <input type="tel" />
+
+        <label for="week"><strong>Select your best week of year</strong></label>
+        <input type="week" name="week" />
+
+        <p>Pick your Favourite color:</p>
+        <input type="color" />Upclick
+        <br />
+        <input type="color" />Downclick
+
+        <p>
+          Select Start and End Date of your teaching profession in previous
+          institution
+        </p>
+        <label for="teaching-date">Select Time & date</label>
+        <input type="date" />
+
+        <label for="color"><strong>Select your favourite color</strong></label>
+        <br />
+        <input type="radio" name="color" />Red
+        <br />
+        <input type="radio" name="color" />Green
+        <br />
+        <input type="radio" name="color" />Blue
+        <br />
+        <input type="radio" name="color" />Yellow
+
+        <label for="sport"><strong>Select your favourite sport</strong></label>
+        <br />
+        <input type="checkbox" />Cricket
+        <br />
+        <input type="checkbox" />Football
+        <br />
+        <input type="checkbox" />Hockey
+      </fieldset>
+    </form>
+  </body>
+</html>

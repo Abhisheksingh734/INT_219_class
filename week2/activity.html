@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      let validateFOrm = () => {
+        let email = document.getElementById("email").value;
+        let pswd = document.getElementById("password").value;
+
+        if (email.trim() === "" || pswd.trim() === "") {
+          alert("Fill all the details");
+          return false;
+        }
+
+        return true;
+      };
+    </script>
+  </head>
+  <body class="h-screen w-[100%] flex items-center justify-around bg-gray-200">
+    <div class="hero flex flex-col">
+      <img
+        class="mb-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Facebook_Logo_%282019%29.svg/1280px-Facebook_Logo_%282019%29.svg.png"
+        alt=""
+        width="300"
+      />
+      <h1 class="text-2xl">
+        Facebook helps you connect and share with <br />
+        the people in your life.
+      </h1>
+    </div>
+    <div class="border rounded-lg p-8 bg-white w-96 mr-10">
+      <h1 class="text-center mb-5 text-xl">Login to Facebook</h1>
+      <form class="flex flex-col" onsubmit="return validateFOrm()">
+        <input
+          type="text"
+          id="email"
+          placeholder="Email address or phone number"
+          required
+          class="border-2 rounded-md p-2 mb-4"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+          class="border-2 rounded-md p-2 mb-4"
+        />
+        <button
+          type="submit"
+          class="bg-blue-500 text-white rounded-md py-2 mb-4"
+        >
+          Log In
+        </button>
+        <a href="#" class="text-blue-500 mb-4">Forgot Password?</a>
+        <button class="bg-green-500 text-white rounded-md py-2">
+          Create New Account
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
