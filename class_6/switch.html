@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="cal()">
+      <input id="marks" type="text" />
+      <button type="submit">Calculate</button>
+    </form>
+    <script>
+      function cal() {
+        let marks = document.getElementById("marks").value;
+        let value = document.getElementById("val");
+        num = marks - (marks % 10);
+        switch (num) {
+          case 90:
+            document.write("A");
+            console.log(num);
+            break;
+          case 80:
+            document.write("B");
+            break;
+          case 70:
+            document.write("C");
+            break;
+          case 60:
+            document.write("D");
+            break;
+          case 50:
+            document.write("E");
+            break;
+          default:
+            document.write("You failed negga!");
+        }
+      }
+    </script>
+  </body>
+</html>

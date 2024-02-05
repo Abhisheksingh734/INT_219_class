@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="getLargest(event)">
+      <input id="num1" type="number" required /> <br />
+      <input id="num2" type="number" required /> <br />
+      <input id="num3" type="number" required /> <br />
+      <button type="submit">GetLargest</button>
+      <div id="val"></div>
+    </form>
+    <script>
+      function getLargest(event) {
+        event.preventDefault();
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let num3 = document.getElementById("num3").value;
+        let val = document.getElementById("val");
+
+        var max;
+
+        if (num1 > num2 && num1 > num3) {
+          max = num1;
+        } else if (num2 > num3 && num2 > num1) {
+          max = num2;
+        } else if (num3 > num1 && num3 > num2) {
+          max = num3;
+        }
+        val.innerHTML = max;
+      }
+    </script>
+  </body>
+</html>
