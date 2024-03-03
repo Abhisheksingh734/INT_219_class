@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Footer Design</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      /*=============== GOOGLE FONTS ===============*/
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+      /*=============== VARIABLES CSS ===============*/
+      :root {
+        /*========== Colors ==========*/
+        --first-color: #f8f9fa;
+        --first-color-alt: #cfcfcf; /* -4% */
+        --title-color: #808080;
+        --text-color: #000000;
+        --text-color-light: #202020;
+        --body-color: #f1f3f4;
+        --second-color: #4180ea;
+        --third-color: #1ba261;
+        --fourth-color: #ed564a;
+        --container-color: #fbbc05;
+
+        /*========== Font and typography ==========*/
+        /*.5rem = 8px | 1rem = 16px ...*/
+        --body-font: "Poppins", sans-serif;
+        --biggest-font-size: 1.75rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+        --tiny-font-size: 0.625rem;
+
+        /*========== Font weight ==========*/
+        --font-medium: 500;
+        --font-semibold: 600;
+
+        /*========== z index ==========*/
+        --z-tooltip: 10;
+        --z-fixed: 100;
+
+        /* header height */
+        --header-height: 3.5rem;
+      }
+
+      /* Responsive typography */
+      @media screen and (min-width: 968px) {
+        :root {
+          --biggest-font-size: 2.5rem;
+          --h1-font-size: 2.25rem;
+          --h2-font-size: 1.5rem;
+          --h3-font-size: 1.25rem;
+          --normal-font-size: 1rem;
+          --small-font-size: 0.875rem;
+          --smaller-font-size: 0.813rem;
+        }
+      }
+
+      /*=============== BASE ===============*/
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body,
+      button,
+      input,
+      textarea {
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+      }
+
+      body {
+        background-color: var(--body-color);
+        color: var(--text-color);
+        transition: 0.4s; /* for light mode animation */
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--title-color);
+        font-weight: var(--font-semibold);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /*=============== REUSABLE CSS CLASSES ===============*/
+      .container {
+        max-width: 1200px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .main {
+        overflow: hidden;
+      }
+
+      .section {
+        padding: 4.5rem 0 1rem;
+      }
+
+      .section__title,
+      .section__subtitle {
+        text-align: center;
+      }
+
+      .section__title {
+        font-size: var(--h2-font-size);
+        color: var(--first-color);
+        margin-bottom: 2rem;
+      }
+
+      .section__subtitle {
+        display: block;
+        font-size: var(--smaller-font-size);
+        color: var(--text-color-light);
+      }
+
+      /*=============== HEADER & NAV ===============*/
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        z-index: var(--z-fixed);
+        transition: 0.4s;
+        background-color: var(--body-color);
+        box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.15);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--header-height);
+      }
+
+      .nav__logo {
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 0.25rem;
+        font-weight: var(--font-medium);
+        transition: 0.4s;
+      }
+
+      .nav__logo i {
+        font-size: 1rem;
+      }
+
+      .nav__logo:hover {
+        color: var(--first-color);
+      }
+
+      @media screen and (max-width: 1024px) {
+        .nav__menu {
+          position: fixed;
+          bottom: 2rem;
+          background-color: var(--container-color);
+          box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
+          width: 90%;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          padding: 1.3rem 3rem;
+          border-radius: 1.25rem;
+          transition: 0.4s;
+        }
+
+        .nav__list {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .nav__link {
+          color: var(--text-color);
+          display: flex;
+          padding: 0.5rem;
+          border-radius: 50%;
+        }
+
+        .nav__link i {
+          font-size: 1.25rem;
+        }
+
+        .nav__link span {
+          display: none;
+        }
+      }
+
+      /*=============== SCROLL BAR ===============*/
+      ::-webkit-scrollbar {
+        width: 0.4rem;
+        border-radius: 0.5rem;
+        background-color: var(--text-color-light);
+      }
+
+      ::-webkit-scrollbar-track {
+        border-radius: 1.5rem;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--first-color-light);
+        border-radius: 0.5rem;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--first-color-alt);
+      }
+
+      /*=============== BREAKPOINTS ===============*/
+      /* For small devices */
+      @media screen and (max-width: 350px) {
+        .container {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+      }
+
+      /* For medium devices */
+      @media screen and (min-width: 576px) {
+      }
+
+      @media screen and (min-width: 767px) {
+        .bottom-link ul {
+          justify-content: flex-start; /* Adjust alignment on smaller screens */
+        }
+
+        .bottom-link ul li {
+          margin-right: 10px; /* Add spacing between items on smaller screens */
+        }
+      }
+      /* For large devices */
+      @media screen and (min-width: 1023px) {
+        .section {
+          padding: 7.5rem 0 1rem;
+        }
+
+        .section__title {
+          font-size: 2.25rem;
+        }
+
+        .section__subtitle {
+          font-size: var(--normal-font-size);
+        }
+
+        .nav {
+          height: calc(var(--header-height) + 1.5rem);
+        }
+
+        .nav__menu {
+          width: initial;
+          margin-left: auto;
+        }
+
+        .nav__list {
+          display: flex;
+          column-gap: 3rem;
+        }
+
+        .nav__link {
+          color: var(--text-color-light);
+        }
+
+        .nav__link i {
+          display: none;
+        }
+
+        .nav__button {
+          display: inline-block;
+        }
+      }
+
+      @media screen and (min-width: 1040px) {
+        .container {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      /* For 2K & 4K resolutions */
+      @media screen and (min-width: 2048px) {
+        body {
+          zoom: 1.5;
+        }
+      }
+
+      @media screen and (min-width: 3048px) {
+        body {
+          zoom: 2;
+        }
+      }
+
+      /*=============== FOOTER ===============*/
+      .footer {
+        background-color: var(--body-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: space-around;
+        padding: 30px 40px;
+      }
+
+      .footer-col {
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer h4 {
+        margin-bottom: 10px;
+        font-size: var(--h2-font-size);
+        color: var(--title-color);
+      }
+
+      .footer ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 5px;
+      }
+
+      .footer ul li a {
+        text-decoration: none;
+        color: var(--title-color);
+      }
+
+      .footer ul li a:hover {
+        color: var(--second-color);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+
+        margin-left: 8px;
+        padding: 8px;
+      }
+
+      .social-links a {
+        color: var(--title-color);
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      .social-links a:hover {
+        color: var(--second-color);
+      }
+
+      .footer-col .h-1 {
+        font-weight: 500;
+        color: #696969;
+      }
+
+      .footer-col .h-2 {
+        color: #696969;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .bottom-link ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .bottom-link ul li {
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        font-size: var(--smaller-font-size);
+        color: var(--title-color);
+        font-weight: 500;
+        margin-bottom: 5px; /* Add spacing between items */
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer">
+      <div class="footer-col">
+        <h4 class="h-1">GDSC WoW 2024</h4>
+        <span class="h-2">Why Join Us?</span>
+        <ul>
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+        </ul>
+
+        <div class="bottom-link">
+          <ul>
+            <li>Google</li>
+            <li>GDSC</li>
+            <li>Privacy</li>
+            <li>ETC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-col footer-links">
+        <span class="h-2"><b>Follow Us</b></span>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
